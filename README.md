@@ -1,56 +1,50 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+![](https://img.shields.io/badge/Ritobroto-Mukherjee-blueviolet?labelColor=yellow)
 
-# Project Name
+# Interview Take Home Project
 
-> Description the project.
+> It's a **MERN** stack project for [DreamzTech Solutions](https://dreamztech.com) coding round. Followed GitHub flow.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- FrontEnd:
+  - React JS
+  - Redux
+- Backend:
+  - Node JS
+  - Express JS
+- Database:
+  - MongoDB
 
-## Live Demo (if available)
+## Live Demo (if available 😉)
 
 [Live Demo Link](https://livedemo.com)
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+- `git clone https://github.com/RitobrotoMukherjee/dreamz-tech.git`
+- `cd dreamz-tech`
 
+## Backend Set-up
+- `cd backend`
+- `npm i`
+- `npm run server`
+- `cd ..`
 
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+### Frontend Set-up
+- `cd frontend`
+- `npm i`
+- `npm run start`
+- `cd ..`
 
 ## Authors
 
-👤 **Author1**
+👤 **Ritobroto Mukherjee**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@RitobrotoMukherjee](https://github.com/RitobrotoMukherjee)
+- Twitter: [@RitobrotoM3](https://twitter.com/RitobrotoM3)
+- LinkedIn: [Ritobroto Mukherjee](https://www.linkedin.com/in/ritobroto-mukherjee-519148ba/)
 
 ## 🤝 Contributing
 
@@ -62,14 +56,6 @@ Feel free to check the [issues page](../../issues/).
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./MIT.md) licensed.
