@@ -1,6 +1,12 @@
 header {
     background-color: #fff;
-    padding: 1em;
+    padding: 0.2em;
     box-shadow: 0.8em 1em 1.5em #ccc;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    color: #646464;
 }

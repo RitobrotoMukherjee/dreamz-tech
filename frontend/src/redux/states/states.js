@@ -4,7 +4,7 @@ const FETCH_DATA = 'dreamztech/States/FETCH_DATA';
 
 const INITIAL_DATA = {
   loading: true,
-  states: [],
+  stateList: [],
 };
 
 const fetchData = (loading, payload) => ({
@@ -13,7 +13,7 @@ const fetchData = (loading, payload) => ({
   loading,
 });
 
-export const fetchApiData = () => async (dispatch) => {
+export const fetchStatesList = () => async (dispatch) => {
   dispatch(fetchData(true, []));
   const apiData = await getStateList();
   const { data } = apiData;

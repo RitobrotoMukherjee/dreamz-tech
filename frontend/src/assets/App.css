@@ -5,6 +5,27 @@
     padding: 3rem;
 }
 
+.flex {
+    display: flex;
+} 
+
+.flex-col {
+    flex-direction: column;
+} 
+
+.items-center {
+    justify-content: center;
+    align-items: center;
+} 
+
+.w-full {
+    width: 100%;
+} 
+
+.h-screen {
+    height: 100vh;
+}
+
 .flex-1 {
     flex: 1 0 100%;
 }
