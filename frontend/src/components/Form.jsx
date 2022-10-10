@@ -53,6 +53,9 @@ const TaxForm = ({ states }) => {
                     <SelectField label="Taxes" options={PanchayatTaxes} value={panchayatTaxes} setFunction={setPanchayatTaxes} />
                 </div>
             )}
+            <div className="flex flex-row items-center">
+                
+            </div>
         </form>
     )
 }

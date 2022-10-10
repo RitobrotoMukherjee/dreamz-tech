@@ -20,12 +20,12 @@ const Home = () => {
     return (
         <Suspense fallback={<Loading />}>
             <div id="Home-holder">
-                <div id="Form" className="FormHolder">
+                <section id="Form" className="FormHolder">
                     {loading && (<Loading />)}
                     {(!loading && stateList.length > 0) && (
                         <TaxForm states={stateList} />
                     )}
-                </div>
+                </section>
             </div>
         </Suspense>
     );
