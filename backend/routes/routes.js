@@ -12,6 +12,6 @@ router.get('/states', GetAllStates);
 router.get('/taxes', GetAllTaxes);
 
 // Save Multiple Taxes
-router.post('/taxes', GetAllTaxes);
+router.post('/taxes', AddMultipleTaxes);
 
 module.exports = router;
