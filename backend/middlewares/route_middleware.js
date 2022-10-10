@@ -12,8 +12,7 @@ const { ERROR_RESPONSE } = require('../utils/response_helper');
 const ValidateMultipleAddRequest = (req, resp, next) => {
     try{
         const { taxes } = req.body;
-
-        if(!taxes.isArray) {
+        if(!Array.isArray(taxes)) {
             return resp.status(400).send({
                 ...ERROR_RESPONSE, msg: 'Bad Request',
                 details: 'Array of taxes required in request body'
@@ -23,8 +22,8 @@ const ValidateMultipleAddRequest = (req, resp, next) => {
 
     }catch(e) {
         return resp.status(400).send({
-            ...ERROR_RESPONSE, msg: 'Bad Request',
-            details: 'POST request body not sent properly, please check your request.'
+            ...ERROR_RESPONSE, msg: 'Bad Request, POST request body not sent properly',
+            details: e.message
         });
     }
 }

@@ -19,15 +19,17 @@ const TaxSchema = new Schema({
         required: true,
         max: [10, 'Only 100 characters allowed for location']
     },
+
+});
+
+// Used to check if a valid array of tax
+const TaxArray = new Schema({
     taxes: {
-        type: String,
-        required: true
-    },
-    property: {
-        type: String
-    },
-    land: {
-        type: String
+        type: [TaxSchema],
+        validate: {
+            validator: v => Array.isArray(v) && v.length > 0,
+            message: props => `${props.value} is not a valid array of Taxes`
+        }
     }
 });
 
@@ -35,4 +37,7 @@ const TaxSchema = new Schema({
  * Bind Schema and Model
  * Exporting the created model
 */
-module.exports = model('taxes', TaxSchema);
+module.exports = {
+    TaxModel: model('taxes', TaxSchema),
+    TaxArray: model('taxarray', TaxArray)
+}
