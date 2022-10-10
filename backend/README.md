@@ -6,7 +6,7 @@
 
 ## Backend Set-up
 - `npm i`
-- `npm run server`
+- `npm run serve`
 
 ## Built With
 - Node JS
