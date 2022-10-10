@@ -3,25 +3,25 @@ import PropTypes from 'prop-types';
 import './inputs.css';
 import RandomId from "../../helper/Random";
 
-const SelectField = ({ value, setFunction, options, label }) => {
+const DataList = ({ value, setFunction, options, label }) => {
     return (
         <label className="FormControl">
             <h4 className="FormLabel">{label} </h4>
-            <select type="text" value={value} onChange={(e) => setFunction(e.target.value)} >
-                <option value="">Select From List</option>
+            <input list="datalist" value={value} onChange={(e) => setFunction(e.target.value)} />
+            <datalist id="datalist">
                 {options.map(({ name }) => (
                     <option key={RandomId()} value={name}>{name}</option>
                 ))}
-            </select>
+            </datalist>
         </label>
     );
 }
 
-SelectField.propTypes = {
+DataList.propTypes = {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     setFunction: PropTypes.func.isRequired,
     options: PropTypes.arrayOf(PropTypes.object)
 }
 
-export default SelectField;
+export default DataList;

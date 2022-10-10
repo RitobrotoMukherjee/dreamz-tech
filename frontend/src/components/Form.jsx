@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useState } from "react";
 import InputField from "./inputs/Input";
 import SelectField from "./inputs/Select";
+import DataList from "./inputs/DataList";
 import { AdministrativeType } from "../helper/StaticData";
 
 const TaxForm = ({ states }) => {
@@ -16,10 +17,15 @@ const TaxForm = ({ states }) => {
 
     return (
         <form className="flex flex-col w-full" onSubmit={handleSubmit}>
-            <div className="flex flex-row items-center">
-                <InputField value={name} setFunction={setName} />
-                <SelectField options={states} value={stateName} setFunction={setStatename} />
-                <SelectField options={AdministrativeType} value={at} setFunction={setAt} />
+            <div className="flex flex-row items-center FromGroup">
+                <InputField label="Name" value={name} setFunction={setName} />
+                <DataList label="State" options={states} value={stateName} setFunction={setStatename} />
+                <SelectField label="Administrative Type" options={AdministrativeType} value={at} setFunction={setAt} />
+            </div>
+            <div className="flex flex-row items-center FromGroup">
+                <InputField label="Name" value={name} setFunction={setName} />
+                <DataList label="State" options={states} value={stateName} setFunction={setStatename} />
+                <SelectField label="Administrative Type" options={AdministrativeType} value={at} setFunction={setAt} />
             </div>
         </form>
     )

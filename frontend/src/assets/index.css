@@ -13,4 +13,8 @@ a {
   text-decoration: none;
 }
 
+form {
+  gap: 1rem;
+}
+
 @import 'App.css';
