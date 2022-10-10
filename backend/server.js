@@ -8,7 +8,7 @@ const { NotFoundRoute } = require('./middlewares/global_middlewares');
 // Main App
 const app = express();
 
-// Specify global middlewares
+// Specify Application level middlewares
 
 // For getting POST and PATCH request body as JSON
 app.use(express.json());
