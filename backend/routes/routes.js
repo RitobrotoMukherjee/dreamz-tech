@@ -1,5 +1,6 @@
 const express = require('express');
 const { GetAllStates } = require('../controllers/state_controller');
+const { GetAllTaxes, AddMultipleTaxes } = require('../controllers/taxes_controller');
 
 // create router
 const router = express.Router();
@@ -8,13 +9,9 @@ const router = express.Router();
 router.get('/states', GetAllStates);
 
 // Taxes List
-router.get('/taxes', (req, resp) => {
-  resp.status(200).send({ msg: 'Taxes List' });
-});
+router.get('/taxes', GetAllTaxes);
 
-// Save Taxes Multiple
-router.post('/taxes', (req, resp) => {
-  resp.status(200).send({ msg: 'Save taxes' });
-});
+// Save Multiple Taxes
+router.post('/taxes', GetAllTaxes);
 
 module.exports = router;
