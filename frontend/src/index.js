@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './assets/index.css';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider} from 'react-redux';
+import store from './redux/configureStore';
+import AppRouter from './Router';
 
 const root = ReactDOM.createRoot(document.getElementById('dreamz-tech-frontend'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );

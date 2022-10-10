@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@100;200;300&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(249, 249, 239);
+  color: #646464;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@import 'App.css';
