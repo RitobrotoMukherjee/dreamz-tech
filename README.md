@@ -29,14 +29,13 @@
 ## Backend Set-up
 - `cd backend`
 - `npm i`
-- `npm run server`
-- `cd ..`
+- `npm run serve`
+- **Keep this open in a different CLI**
 
 ### Frontend Set-up
 - `cd frontend`
 - `npm i`
 - `npm run start`
-- `cd ..`
 
 ## Author
 

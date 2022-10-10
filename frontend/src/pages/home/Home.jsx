@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../../components/Loading';
 import { fetchStatesList } from '../../redux/states/states';
-import TaxForm from '../../components/Form';
+
+
+const TaxForm = React.lazy(() => import('../../components/Form'));
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -16,15 +18,16 @@ const Home = () => {
     }, [dispatch]);
 
     return (
-        <div id="Home-holder">
-            <div id="Form" className="FormHolder">
-                {loading && (<Loading />)}
-                {(!loading && stateList.length > 0) && (
-                    <TaxForm states={stateList} />
-                )}
-                
+        <Suspense fallback={<Loading />}>
+            <div id="Home-holder">
+                <div id="Form" className="FormHolder">
+                    {loading && (<Loading />)}
+                    {(!loading && stateList.length > 0) && (
+                        <TaxForm states={stateList} />
+                    )}
+                </div>
             </div>
-        </div>
+        </Suspense>
     );
 }
 

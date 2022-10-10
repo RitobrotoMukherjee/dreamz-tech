@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Route, Routes} from 'react-router-dom';
-import Layout from './components/Layout/Layout';
-import Home from './pages/home/Home';
-import NotFound from './pages/not-found/NotFound';
+import Loading from './components/Loading';
+
+/**
+ * Load component view with promise and fallback,
+ * Site load speed increases
+ * Only loads the components that is getting rendered
+ * Does not load everything in the beginning
+ */
+const Layout = React.lazy(() => import( './components/Layout/Layout' ));
+const Home = React.lazy(() => import( './pages/home/Home' ));
+const NotFound = React.lazy(() => import( './pages/not-found/NotFound' ));
 
 function AppRouter() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-      </Route>
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <Suspense fallback={<Loading />}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
   );
 }
 
