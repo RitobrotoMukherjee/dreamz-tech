@@ -4,7 +4,7 @@
   "description": "It's a small API to handle the React frontend data add and view from MongoDB",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "npx eslint . --fix",
     "serve": "nodemon index.js"
   },
   "keywords": [
@@ -16,6 +16,10 @@
   "author": "Ritobroto Mukherjee",
   "license": "MIT",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.26.0",
     "nodemon": "^2.0.20"
   },
   "dependencies": {

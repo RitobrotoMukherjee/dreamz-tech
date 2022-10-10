@@ -5,5 +5,5 @@ require('dotenv').config();
 const APP = require('./server');
 
 APP.listen(process.env.PORT, () => {
-    console.log(`Listening to APP: Root URL: http://localhost:${process.env.PORT}`);
+  console.log(`Listening to APP: Root URL: http://localhost:${process.env.PORT}`);
 });
