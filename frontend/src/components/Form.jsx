@@ -17,12 +17,12 @@ const TaxForm = ({ states }) => {
 
     return (
         <form className="flex flex-col w-full" onSubmit={handleSubmit}>
-            <div className="flex flex-row items-center FromGroup">
+            <div className="flex flex-row items-center">
                 <InputField label="Name" value={name} setFunction={setName} />
                 <DataList label="State" options={states} value={stateName} setFunction={setStatename} />
                 <SelectField label="Administrative Type" options={AdministrativeType} value={at} setFunction={setAt} />
             </div>
-            <div className="flex flex-row items-center FromGroup">
+            <div className="flex flex-row items-center">
                 <InputField label="Name" value={name} setFunction={setName} />
                 <DataList label="State" options={states} value={stateName} setFunction={setStatename} />
                 <SelectField label="Administrative Type" options={AdministrativeType} value={at} setFunction={setAt} />
