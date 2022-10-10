@@ -1,0 +1,11 @@
+.FormControl {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.FormLabel {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
