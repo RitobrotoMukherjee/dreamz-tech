@@ -38,7 +38,7 @@
 - `npm run start`
 - `cd ..`
 
-## Authors
+## Author
 
 👤 **Ritobroto Mukherjee**
 
