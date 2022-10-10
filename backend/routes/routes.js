@@ -1,12 +1,11 @@
 const express = require('express');
+const { GetAllStates } = require('../controllers/state_controller');
 
 // create router
 const router = express.Router();
 
 // state list
-router.get('/states', (req, resp) => {
-  resp.status(200).send({ msg: 'State List' });
-});
+router.get('/states', GetAllStates);
 
 // Taxes List
 router.get('/taxes', (req, resp) => {
