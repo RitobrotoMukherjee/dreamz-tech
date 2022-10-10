@@ -17,10 +17,20 @@ const TaxSchema = new Schema({
     location: {
         type: String,
         required: true,
-        max: [10, 'Only 100 characters allowed for location']
+        maxLength: [100, 'Only 100 characters allowed for location']
     },
-
-});
+    taxes: {
+        type: String,
+        required: true,
+        maxLength: [15, 'Only 15 characters allowed for location']
+    },
+    property: {
+        type: String,
+    },
+    land: {
+        type: String,
+    }
+}, { timestamps: true });
 
 // Used to check if a valid array of tax
 const TaxArray = new Schema({

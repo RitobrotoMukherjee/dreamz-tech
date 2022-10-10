@@ -10,7 +10,7 @@ const GetAllTaxes = (_, resp) => {
         resp.status(200).send({
             ...SUCCESS_RESPONSE, data
         });
-    });
+    }).sort({ createdAt: -1 });
 }
 
 const AddMultipleTaxes = async (req, resp) => {
