@@ -9,7 +9,7 @@ const { ERROR_RESPONSE } = require('../utils/response_helper');
  * Checks if an array of object is sent 
  */
 
-const CheckMultipleData = (req, resp, next) => {
+const ValidateMultipleAddRequest = (req, resp, next) => {
     try{
         const { taxes } = req.body;
 
@@ -29,4 +29,4 @@ const CheckMultipleData = (req, resp, next) => {
     }
 }
 
-module.exports = { CheckMultipleData };
+module.exports = { ValidateMultipleAddRequest };
