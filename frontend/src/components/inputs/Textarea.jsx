@@ -4,7 +4,7 @@ import './inputs.css';
 
 const TextAreaInput = ({ name, value, handleChange, label }) => {
     return (
-        <div className="FormControl">
+        <div className="FormControl TextArea">
             <label htmlFor={`${label}-text-area`} className="FormLabel">
                 {label}
             </label>
