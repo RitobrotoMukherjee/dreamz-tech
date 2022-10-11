@@ -67,7 +67,7 @@ const TaxForm = () => {
                 </form>
             </section>
 
-            <TaxList />
+            {data.panchayatTaxes !== 'no taxes' && (<TaxList />)}
         </>
     )
 }
