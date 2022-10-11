@@ -13,6 +13,7 @@
 
 .flex {
     display: flex;
+    gap: 1rem;
 } 
 
 .flex-col {
@@ -62,6 +63,16 @@
     line-height: 1px;
 }
 
+.MainHeading::after {
+    content: '';
+    display: block;
+    padding: 0.15rem;
+    width: 45%;
+    margin: 1rem auto;
+    background-color: rgb(39, 222, 222, 0.75);
+    border-radius: 0.5rem;
+}
+
 .ParagraphContainer {
     display: flex;
     justify-content: center;
@@ -69,7 +80,7 @@
     margin: 0 auto;
 }
 
-.FormHolder {
+.SectionHolder {
     margin: 1rem auto;
     background: rgba(255, 250, 250, 0.966);
     padding: 1rem;
