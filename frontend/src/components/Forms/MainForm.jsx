@@ -6,7 +6,10 @@ import { useSelector } from "react-redux";
 import { AdministrativeType } from '../../helper/StaticData';
 
 const MainForm = ({ data, handleChange }) => {
+
+    // using statelist from Redux store instead of passing as prop
     const { stateList } = useSelector((state) => state.states);
+    
     return (
         <>
             <div className="flex flex-row items-center">
