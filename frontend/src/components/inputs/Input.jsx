@@ -14,7 +14,7 @@ const InputField = ({ name, value, handleChange, label }) => {
                 autoComplete="off"
                 required={true}
                 placeholder={`Enter ${label}`} 
-                pattern="[A-Za-z ]{1,21}"
+                pattern="[A-Za-z0-9 ]{1,21}"
                 onChange={handleChange}
             />
         </div>

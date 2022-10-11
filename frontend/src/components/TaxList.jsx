@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import fetchActionThunk from '../redux/taxes/thunk';
 import Loading from "./Loading";
+import RandomId from "../helper/Random";
 
 const TaxList = () => {
     const dispatch = useDispatch();
@@ -36,7 +37,7 @@ const TaxList = () => {
                         </thead>
                         <tbody>
                             {[...newTaxData, ...taxData].map((tax) => (
-                                <tr key={tax._id}>
+                                <tr key={RandomId()}>
                                     <td >{tax.name}</td>
                                     <td >{tax.state}</td>
                                     <td >{tax.administrative_type}</td>

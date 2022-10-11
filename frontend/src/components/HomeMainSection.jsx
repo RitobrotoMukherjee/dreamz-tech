@@ -12,22 +12,42 @@ const TaxList = React.lazy(() => import('./TaxList'));
 const TaxForm = () => {
     const dispatch = useDispatch();
 
-    // All states as object as form has multiple inputs
-    const [data, setData] = useState({
+    const INITIAL_DATA = {
         // Main States
-        name: '', stateName: '', at: '',
+        name: '', state: '', administrative_type: '',
 
         // Row 2 states(Municipality)
         property: '', locationMunicipality: '', municipalityTaxes: '',
 
         // Row 2 states(Panchayat)
         land: '', locationPanchayat: '', panchayatTaxes: ''
-    });
+    }
+
+    // All states as object as form has multiple inputs
+    const [data, setData] = useState(INITIAL_DATA);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(JSON.stringify(data));
-        // dispatch(addAction(JSON.stringify(data)));
+        const saveData = {};
+        for(const key in data) {
+            if(data[key] !== '') {
+                saveData[key] = data[key];
+            }
+        }
+
+        // To match the fields in DB
+        for(const prop in saveData) {
+            if(['municipalityTaxes', 'panchayatTaxes'].includes(prop)) {
+                saveData['taxes'] = saveData[prop];
+                delete saveData[prop];
+            }
+            if(['locationMunicipality', 'locationPanchayat'].includes(prop)) {
+                saveData['location'] = saveData[prop];
+                delete saveData[prop];
+            }
+        }
+        dispatch(addAction(saveData));
+        setData(INITIAL_DATA);
     }
 
     const handleChange = (e) => {
