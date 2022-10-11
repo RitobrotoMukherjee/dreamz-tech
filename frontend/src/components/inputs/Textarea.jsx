@@ -4,10 +4,15 @@ import './inputs.css';
 
 const TextAreaInput = ({ value, setFunction, label }) => {
     return (
-        <label className="FormControl TextArea">
-            <h4 className="FormLabel">{label} </h4>
-            <textarea value={value} onChange={(e) => setFunction(e.target.value)} />
-        </label>
+        <div className="FormControl">
+            <label htmlFor={`${label}-text-area`} className="FormLabel">
+                {label}
+            </label>
+            <textarea
+                id={`${label}-text-area`} type="text" value={value}
+                onChange={(e) => setFunction(e.target.value)}
+            />
+        </div>
     )
 }
 

@@ -5,15 +5,20 @@ import RandomId from "../../helper/Random";
 
 const SelectField = ({ value, setFunction, options, label }) => {
     return (
-        <label className="FormControl">
-            <h4 className="FormLabel">{label} </h4>
-            <select type="text" value={value} onChange={(e) => setFunction(e.target.value)} >
+        <div className="FormControl">
+            <label htmlFor={`${label}-select`} className="FormLabel">
+                {label}
+            </label>
+
+            <select id={`${label}-select`} type="text" value={value}
+                onChange={(e) => setFunction(e.target.value)}
+            >
                 <option value="">Select From List</option>
                 {options.map(({ name }) => (
                     <option key={RandomId()} value={name}>{name}</option>
                 ))}
             </select>
-        </label>
+        </div>
     );
 }
 

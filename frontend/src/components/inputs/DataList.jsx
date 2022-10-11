@@ -5,15 +5,21 @@ import RandomId from "../../helper/Random";
 
 const DataList = ({ value, setFunction, options, label }) => {
     return (
-        <label className="FormControl">
-            <h4 className="FormLabel">{label} </h4>
-            <input list="datalist" value={value} onChange={(e) => setFunction(e.target.value)} />
+        <div className="FormControl">
+            <label htmlFor={`${label}-list`} className="FormLabel">
+                {label}
+            </label>
+
+            <input
+                id={`${label}-list`} list="datalist"
+                value={value} onChange={(e) => setFunction(e.target.value)}
+            />
             <datalist id="datalist">
                 {options.map(({ name }) => (
                     <option key={RandomId()} value={name}>{name}</option>
                 ))}
             </datalist>
-        </label>
+        </div>
     );
 }
 

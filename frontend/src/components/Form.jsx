@@ -11,10 +11,11 @@ import {
 } from "../helper/StaticData";
 
 const TaxForm = ({ states }) => {
-    // Main States
-    const [name, setName] = useState('');
-    const [stateName, setStatename] = useState('');
-    const [at, setAt] = useState('');
+    // All states as object as form has multiple inputs
+    const [data, setData] = useState({
+        // Main States
+        name: '', stateName: '', at: ''
+    });
 
     // Row 2 states(Municipality)
     const [property, setProperty] = useState('');
@@ -33,12 +34,12 @@ const TaxForm = ({ states }) => {
     return (
         <form className="flex flex-col w-full" onSubmit={handleSubmit}>
             <div className="flex flex-row items-center">
-                <InputField label="Name" value={name} setFunction={setName} />
-                <DataList label="State" options={states} value={stateName} setFunction={setStatename} />
-                <SelectField label="Administrative Type" options={AdministrativeType} value={at} setFunction={setAt} />
+                <InputField label="Name" value={data.name} setFunction={setName} />
+                <DataList label="State" options={states} value={data.stateName} setFunction={setStatename} />
+                <SelectField label="Administrative Type" options={AdministrativeType} value={data.at} setFunction={setAt} />
             </div>
 
-            {at === 'Municipality' && (
+            {data.at === 'Municipality' && (
                 <div className="flex flex-row items-center">
                     <SelectField label="Property" options={MunicipalityProperty} value={property} setFunction={setProperty} />
                     <TextAreaInput label="Location" value={locationMunicipality} setFunction={setLocationMunicipality} />
@@ -46,7 +47,7 @@ const TaxForm = ({ states }) => {
                 </div>
             )}
 
-            {at === 'Panchayat' && (
+            {data.at === 'Panchayat' && (
                 <div className="flex flex-row items-center">
                     <SelectField label="Land" options={PanchayatLand} value={land} setFunction={setLand} />
                     <TextAreaInput label="Location" value={locationPanchayat} setFunction={setLocationPanchayat} />

@@ -4,10 +4,12 @@ import './inputs.css';
 
 const InputField = ({ value, setFunction, label }) => {
     return (
-        <label className="FormControl">
-            <h4 className="FormLabel">{label} </h4>
-            <input type="text" value={value} onChange={(e) => setFunction(e.target.value)} />
-        </label>
+        <div className="FormControl">
+            <label htmlFor={`${label}-input`} className="FormLabel">
+                {label}
+            </label>
+            <input id={`${label}-input`} type="text" value={value} onChange={(e) => setFunction(e.target.value)} />
+        </div>
     );
 }
 
