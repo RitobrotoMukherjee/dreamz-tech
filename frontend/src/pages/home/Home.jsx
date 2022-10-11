@@ -6,10 +6,12 @@ import Loading from '../../components/Loading';
 import Button from '../../components/inputs/Button';
 
 const TaxForm = React.lazy(() => import('../../components/Form'));
+const TaxList = React.lazy(() => import('../../components/TaxList'));
 
 const Home = () => {
     const dispatch = useDispatch();
     const { loading, stateList } = useSelector((state) => state.states);
+    const { newTaxData } = useSelector((state) => state.taxes);
 
     useEffect(() => {
         if (stateList.length === 0) {
@@ -18,7 +20,7 @@ const Home = () => {
     }, [dispatch]);
 
     const SyncWithDB = () => {
-        console.log('Sync');
+        console.log('Sync', newTaxData);
     }
 
     return (
@@ -35,6 +37,7 @@ const Home = () => {
                                 />
                             </div>
                             <TaxForm />
+                            <TaxList />
                         </>
 
                     )}
