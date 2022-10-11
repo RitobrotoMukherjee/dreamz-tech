@@ -8,7 +8,11 @@ const InputField = ({ value, setFunction, label }) => {
             <label htmlFor={`${label}-input`} className="FormLabel">
                 {label}
             </label>
-            <input id={`${label}-input`} type="text" value={value} onChange={(e) => setFunction(e.target.value)} />
+            <input
+                id={`${label}-input`} type="text" value={value}
+                placeholder={`Enter ${label}`} pattern="([A-Z])[\w+.]{1,}"
+                onChange={(e) => setFunction(e.target.value)}
+            />
         </div>
     );
 }
