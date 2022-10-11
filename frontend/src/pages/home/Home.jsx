@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../../components/Loading';
 import { fetchStatesList } from '../../redux/states/states';
 
-
 const TaxForm = React.lazy(() => import('../../components/Form'));
 
 const Home = () => {
@@ -23,7 +22,7 @@ const Home = () => {
                 <section id="Form" className="FormHolder">
                     {loading && (<Loading />)}
                     {(!loading && stateList.length > 0) && (
-                        <TaxForm states={stateList} />
+                        <TaxForm />
                     )}
                 </section>
             </div>

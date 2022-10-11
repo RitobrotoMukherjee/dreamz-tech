@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './inputs.css';
 import RandomId from "../../helper/Random";
 
-const DataList = ({ value, setFunction, options, label }) => {
+const DataList = ({ name, value, setFunction, options, label }) => {
     return (
         <div className="FormControl">
             <label htmlFor={`${label}-list`} className="FormLabel">
@@ -11,7 +11,7 @@ const DataList = ({ value, setFunction, options, label }) => {
             </label>
 
             <input
-                id={`${label}-list`} list="datalist"
+                id={`${label}-list`} list="datalist" name={name}
                 value={value} onChange={(e) => setFunction(e.target.value)}
             />
             <datalist id="datalist">
@@ -24,6 +24,7 @@ const DataList = ({ value, setFunction, options, label }) => {
 }
 
 DataList.propTypes = {
+    name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     setFunction: PropTypes.func.isRequired,

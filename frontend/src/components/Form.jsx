@@ -1,16 +1,15 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { useState } from "react";
-import InputField from "./inputs/Input";
 import SelectField from "./inputs/Select";
-import DataList from "./inputs/DataList";
 import TextAreaInput from "./inputs/Textarea";
+import MainForm from "./Forms/MainForm";
 import {
-    AdministrativeType, MunicipalityProperty, MunicipalityTaxes,
+    MunicipalityProperty, MunicipalityTaxes,
     PanchayatLand, PanchayatTaxes
 } from "../helper/StaticData";
 
-const TaxForm = ({ states }) => {
+const TaxForm = () => {
     // All states as object as form has multiple inputs
     const [data, setData] = useState({
         // Main States
@@ -29,17 +28,14 @@ const TaxForm = ({ states }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log(JSON.stringify(data));
     }
 
     return (
         <form className="flex flex-col w-full" onSubmit={handleSubmit}>
-            <div className="flex flex-row items-center">
-                <InputField label="Name" value={data.name} setFunction={setName} />
-                <DataList label="State" options={states} value={data.stateName} setFunction={setStatename} />
-                <SelectField label="Administrative Type" options={AdministrativeType} value={data.at} setFunction={setAt} />
-            </div>
-
-            {data.at === 'Municipality' && (
+            
+            <MainForm data={data} changeHandler={setData} />
+            {/* {data.at === 'Municipality' && (
                 <div className="flex flex-row items-center">
                     <SelectField label="Property" options={MunicipalityProperty} value={property} setFunction={setProperty} />
                     <TextAreaInput label="Location" value={locationMunicipality} setFunction={setLocationMunicipality} />
@@ -53,7 +49,7 @@ const TaxForm = ({ states }) => {
                     <TextAreaInput label="Location" value={locationPanchayat} setFunction={setLocationPanchayat} />
                     <SelectField label="Taxes" options={PanchayatTaxes} value={panchayatTaxes} setFunction={setPanchayatTaxes} />
                 </div>
-            )}
+            )} */}
             <div className="flex flex-row items-center">
                 
             </div>
