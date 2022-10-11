@@ -88,3 +88,8 @@
     border-radius: 0.5rem;
     box-shadow: 1px 10px 18px #646464;
 }
+
+.Error {
+    color: rgb(236, 13, 13, 0.9);
+    box-shadow: 0px 0px 12px rgb(236, 13, 13, 0.60);;
+}

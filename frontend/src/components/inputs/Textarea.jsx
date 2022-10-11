@@ -12,6 +12,8 @@ const TextAreaInput = ({ name, value, handleChange, label }) => {
                 name={name}
                 id={`${label}-text-area`} type="text" value={value}
                 onChange={handleChange}
+                required={true}
+                pattern="[A-Za-z0-9 ]{1, 100}"
             />
         </div>
     )

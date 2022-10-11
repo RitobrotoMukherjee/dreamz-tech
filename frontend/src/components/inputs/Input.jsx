@@ -11,7 +11,10 @@ const InputField = ({ name, value, handleChange, label }) => {
             <input
                 id={`${label}-input`} type="text" 
                 name={name} value={value}
-                placeholder={`Enter ${label}`} pattern="([A-Z])[\w+.]{1,}"
+                autoComplete="off"
+                required={true}
+                placeholder={`Enter ${label}`} 
+                pattern="[A-Za-z ]{1,21}"
                 onChange={handleChange}
             />
         </div>

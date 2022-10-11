@@ -14,6 +14,7 @@ const SelectField = ({ name, value, handleChange, options, label }) => {
                 name={name}
                 id={`${label}-select`} type="text" value={value}
                 onChange={handleChange}
+                required={true}
             >
                 <option value="">Select From List</option>
                 {options.map(({ name }) => (

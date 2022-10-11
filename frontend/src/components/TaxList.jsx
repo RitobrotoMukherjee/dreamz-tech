@@ -12,37 +12,43 @@ const TaxList = () => {
     }, []);
 
     return (
-        <div className="flex flex-col items-center TableHolder">
-            <div className="HeadingHolder">
-                <h2 className="MainHeading">Tax List</h2>
-            </div>
-            {loadingTax && (<Loading />)}
-            {(!loadingTax && errors) && (<p>{errors}</p>)}
-            {!loadingTax && (
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>State</th>
-                            <th>Admin Type</th>
-                            <th>Location</th>
-                            <th>Tax Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {[...newTaxData, ...taxData].map((tax) => (
-                            <tr key={tax._id}>
-                                <td >{tax.name}</td>
-                                <td >{tax.state}</td>
-                                <td >{tax.administrative_type}</td>
-                                <td >{tax.location}</td>
-                                <td >{tax.taxes}</td>
+        <section className="SectionHolder">
+            <div className="flex flex-col items-center TableHolder">
+                <div className="HeadingHolder">
+                    <h2 className="MainHeading">Tax List</h2>
+                </div>
+                {loadingTax && (<Loading />)}
+                {(!loadingTax && errors) && (
+                    <div className="HeadingHolder">
+                        <h3 className="MainHeading Error">{errors}</h3>
+                    </div>
+                )}
+                {!loadingTax && (
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>State</th>
+                                <th>Admin Type</th>
+                                <th>Location</th>
+                                <th>Tax Type</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-            )}
-        </div>
+                        </thead>
+                        <tbody>
+                            {[...newTaxData, ...taxData].map((tax) => (
+                                <tr key={tax._id}>
+                                    <td >{tax.name}</td>
+                                    <td >{tax.state}</td>
+                                    <td >{tax.administrative_type}</td>
+                                    <td >{tax.location}</td>
+                                    <td >{tax.taxes}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                )}
+            </div>
+        </section>
     )
 }
 

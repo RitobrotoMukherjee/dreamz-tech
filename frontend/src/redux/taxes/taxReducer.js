@@ -15,7 +15,7 @@ export default (state = INITIAL_STATE, action) => {
         case FETCH_DATA: return { ...state, ...action.payload }
         case ADD_DATA: {
             const { newTaxData } = state;
-            
+            return { ...state, newTaxData: [action.payload , ...newTaxData] };
         }
         default: return state
     }
