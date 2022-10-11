@@ -44,7 +44,7 @@ const TaxForm = () => {
                 <MainForm data={data} handleChange={handleChange} />
             </Suspense>
             <div className="flex flex-row items-center">
-                <Button type="submit" className='ButtonCenterLg' label='Save In Redux' />
+                <Button type="submit" className='' label='Save In Redux' />
             </div>
         </form>
     )

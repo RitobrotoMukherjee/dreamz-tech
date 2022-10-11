@@ -41,8 +41,4 @@ input, select, textarea, button {
     .Button {
         width: 12rem;
     }
-
-    .ButtonCenterLg {
-        margin-left: 40%;
-    }
 }

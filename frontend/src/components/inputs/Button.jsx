@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Button = ({ type, label, className, handleClick }) => {
     return (
-        <div className={`FormControl ${className}`}>
+        <div className={`${className}`}>
             <button
                 className="Button" aria-label={type}
                 type={type} onClick={handleClick}
@@ -17,7 +17,7 @@ const Button = ({ type, label, className, handleClick }) => {
 Button.propTypes = {
     label: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
     handleClick: PropTypes.func
 }
 
