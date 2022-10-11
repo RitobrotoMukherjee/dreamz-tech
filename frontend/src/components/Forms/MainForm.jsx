@@ -24,17 +24,17 @@ const MainForm = ({ data, handleChange }) => {
                 />
 
                 <DataList
-                    name='stateName' label="State" options={stateList}
-                    value={data.stateName} handleChange={handleChange}
+                    name='state' label="State" options={stateList}
+                    value={data.state} handleChange={handleChange}
                 />
 
                 <SelectField
-                    name="at" label="Administrative Type"
-                    options={AdministrativeType} value={data.at} handleChange={handleChange}
+                    name="administrative_type" label="Administrative Type"
+                    options={AdministrativeType} value={data.administrative_type} handleChange={handleChange}
                 />
             </div>
 
-            {data.at === 'Municipality' && (
+            {data.administrative_type === 'Municipality' && (
                 <div className="flex flex-row items-center">
                     <SelectField
                         name="property" label="Property" options={MunicipalityProperty}
@@ -53,7 +53,7 @@ const MainForm = ({ data, handleChange }) => {
                 </div>
             )}
 
-            {data.at === 'Panchayat' && (
+            {data.administrative_type === 'Panchayat' && (
                 <div className="flex flex-row items-center">
                     <SelectField
                         name="land" label="Land" options={PanchayatLand} 

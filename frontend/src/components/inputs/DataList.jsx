@@ -13,6 +13,7 @@ const DataList = ({ name, value, handleChange, options, label }) => {
             <input
                 id={`${label}-list`} list="datalist" name={name}
                 value={value} onChange={handleChange} placeholder={`Search ${label}`}
+                required={true}
             />
             <datalist id="datalist">
                 {options.map(({ name }) => (

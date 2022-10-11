@@ -17,5 +17,25 @@ form {
   gap: 1rem;
 }
 
+.TableHolder {
+  overflow-x: auto;
+}
+
+table {
+  font-family: 'Poppins', sans-serif;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ad9e9e;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
 
 @import 'App.css';
