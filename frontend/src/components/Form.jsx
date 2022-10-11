@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { useState } from "react";
 import Loading from "./Loading";
+import Button from "./inputs/Button";
 
 // Lazy load as this loads a lot of other input components
 const MainForm = React.lazy(() => import( "./Forms/MainForm" ));
@@ -43,7 +44,7 @@ const TaxForm = () => {
                 <MainForm data={data} handleChange={handleChange} />
             </Suspense>
             <div className="flex flex-row items-center">
-                
+                <Button type="submit" />
             </div>
         </form>
     )
