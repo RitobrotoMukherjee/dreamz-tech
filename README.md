@@ -16,9 +16,9 @@
 - Database:
   - MongoDB
 
-## Live Demo (if available 😉)
+## Live Demo (if available 💻)
 
-[Live Demo Link](https://livedemo.com)
+- <input type="checkbox" checked /> Not available right now, if required can be made live using **Netlify** and **Vercel**.
 
 
 ## Getting Started
