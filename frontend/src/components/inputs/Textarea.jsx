@@ -2,19 +2,26 @@ import React from "react";
 import PropTypes from 'prop-types';
 import './inputs.css';
 
-const TextAreaInput = ({ value, setFunction, label }) => {
+const TextAreaInput = ({ name, value, handleChange, label }) => {
     return (
-        <label className="FormControl TextArea">
-            <h4 className="FormLabel">{label} </h4>
-            <textarea value={value} onChange={(e) => setFunction(e.target.value)} />
-        </label>
+        <div className="FormControl TextArea">
+            <label htmlFor={`${label}-text-area`} className="FormLabel">
+                {label}
+            </label>
+            <textarea
+                name={name}
+                id={`${label}-text-area`} type="text" value={value}
+                onChange={handleChange}
+            />
+        </div>
     )
 }
 
 TextAreaInput.propTypes = {
+    name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
-    setFunction: PropTypes.func.isRequired
+    handleChange: PropTypes.func.isRequired
 }
 
 export default TextAreaInput;

@@ -3,24 +3,31 @@ import PropTypes from 'prop-types';
 import './inputs.css';
 import RandomId from "../../helper/Random";
 
-const DataList = ({ value, setFunction, options, label }) => {
+const DataList = ({ name, value, handleChange, options, label }) => {
     return (
-        <label className="FormControl">
-            <h4 className="FormLabel">{label} </h4>
-            <input list="datalist" value={value} onChange={(e) => setFunction(e.target.value)} />
+        <div className="FormControl">
+            <label htmlFor={`${label}-list`} className="FormLabel">
+                {label}
+            </label>
+
+            <input
+                id={`${label}-list`} list="datalist" name={name}
+                value={value} onChange={handleChange} placeholder={`Search ${label}`}
+            />
             <datalist id="datalist">
                 {options.map(({ name }) => (
                     <option key={RandomId()} value={name}>{name}</option>
                 ))}
             </datalist>
-        </label>
+        </div>
     );
 }
 
 DataList.propTypes = {
+    name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
-    setFunction: PropTypes.func.isRequired,
+    handleChange: PropTypes.func.isRequired,
     options: PropTypes.arrayOf(PropTypes.object)
 }
 
