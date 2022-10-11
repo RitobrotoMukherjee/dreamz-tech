@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './inputs.css';
 import RandomId from "../../helper/Random";
 
-const SelectField = ({ name, value, setFunction, options, label }) => {
+const SelectField = ({ name, value, handleChange, options, label }) => {
     return (
         <div className="FormControl">
             <label htmlFor={`${label}-select`} className="FormLabel">
@@ -13,7 +13,7 @@ const SelectField = ({ name, value, setFunction, options, label }) => {
             <select
                 name={name}
                 id={`${label}-select`} type="text" value={value}
-                onChange={(e) => setFunction(e.target.value)}
+                onChange={handleChange}
             >
                 <option value="">Select From List</option>
                 {options.map(({ name }) => (
@@ -28,7 +28,7 @@ SelectField.propTypes = {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
-    setFunction: PropTypes.func.isRequired,
+    handleChange: PropTypes.func.isRequired,
     options: PropTypes.arrayOf(PropTypes.object)
 }
 

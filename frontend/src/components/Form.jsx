@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { useState } from "react";
-import SelectField from "./inputs/Select";
-import TextAreaInput from "./inputs/Textarea";
+// import SelectField from "./inputs/Select";
+// import TextAreaInput from "./inputs/Textarea";
 import MainForm from "./Forms/MainForm";
-import {
-    MunicipalityProperty, MunicipalityTaxes,
-    PanchayatLand, PanchayatTaxes
-} from "../helper/StaticData";
+// import {
+//     MunicipalityProperty, MunicipalityTaxes,
+//     PanchayatLand, PanchayatTaxes
+// } from "../helper/StaticData";
 
 const TaxForm = () => {
     // All states as object as form has multiple inputs
@@ -17,14 +17,14 @@ const TaxForm = () => {
     });
 
     // Row 2 states(Municipality)
-    const [property, setProperty] = useState('');
-    const [locationMunicipality, setLocationMunicipality] = useState('');
-    const [municipalityTaxes, setMunicipalTaxes] = useState('');
+    // const [property, setProperty] = useState('');
+    // const [locationMunicipality, setLocationMunicipality] = useState('');
+    // const [municipalityTaxes, setMunicipalTaxes] = useState('');
 
-    // Row 2 states(Panchayat)
-    const [land, setLand] = useState('');
-    const [locationPanchayat, setLocationPanchayat] = useState('');
-    const [panchayatTaxes, setPanchayatTaxes] = useState('');
+    // // Row 2 states(Panchayat)
+    // const [land, setLand] = useState('');
+    // const [locationPanchayat, setLocationPanchayat] = useState('');
+    // const [panchayatTaxes, setPanchayatTaxes] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
