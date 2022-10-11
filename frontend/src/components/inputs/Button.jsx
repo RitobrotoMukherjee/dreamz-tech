@@ -1,16 +1,24 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const Button = ({ type }) => {
+const Button = ({ type, label, className, handleClick }) => {
     return (
-        <div className="FormControl ButtonCenterLg">
-            <button className="Button" aria-label="Submit" type={type}>Submit</button>
+        <div className={`FormControl ${className}`}>
+            <button
+                className="Button" aria-label={type}
+                type={type} onClick={handleClick}
+            >
+                {label}
+            </button>
         </div>
     );
 }
 
 Button.propTypes = {
-    type: PropTypes.string.isRequired
+    label: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    className: PropTypes.string.isRequired,
+    handleClick: PropTypes.func
 }
 
 export default Button;

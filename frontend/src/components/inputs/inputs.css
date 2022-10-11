@@ -34,6 +34,7 @@ input, select, textarea, button {
 
 .ButtonRight {
     margin-left: auto;
+    margin-bottom: 1.5rem;
 }
 
 @media (min-width: 760px) {
