@@ -1,13 +1,16 @@
-import React from "react";
+import React, { Suspense } from "react";
 import PropTypes from 'prop-types';
 import { useState } from "react";
+import Loading from "./Loading";
 // import SelectField from "./inputs/Select";
 // import TextAreaInput from "./inputs/Textarea";
-import MainForm from "./Forms/MainForm";
 // import {
 //     MunicipalityProperty, MunicipalityTaxes,
 //     PanchayatLand, PanchayatTaxes
 // } from "../helper/StaticData";
+
+// Lazy load as this loads a lot of other input components
+const MainForm = React.lazy(() => import( "./Forms/MainForm" ));
 
 const TaxForm = () => {
     // All states as object as form has multiple inputs
@@ -33,8 +36,9 @@ const TaxForm = () => {
 
     return (
         <form className="flex flex-col w-full" onSubmit={handleSubmit}>
+            <Suspense fallback={<Loading />} >
+                <MainForm data={data} handleChange={setData} />
             
-            <MainForm data={data} changeHandler={setData} />
             {/* {data.at === 'Municipality' && (
                 <div className="flex flex-row items-center">
                     <SelectField label="Property" options={MunicipalityProperty} value={property} setFunction={setProperty} />
@@ -50,6 +54,7 @@ const TaxForm = () => {
                     <SelectField label="Taxes" options={PanchayatTaxes} value={panchayatTaxes} setFunction={setPanchayatTaxes} />
                 </div>
             )} */}
+            </Suspense>
             <div className="flex flex-row items-center">
                 
             </div>
