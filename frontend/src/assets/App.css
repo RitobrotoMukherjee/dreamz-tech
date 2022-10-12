@@ -91,5 +91,5 @@
 
 .Error {
     color: rgb(236, 13, 13, 0.9);
-    box-shadow: 0px 0px 12px rgb(236, 13, 13, 0.60);;
+    text-shadow: -3px 15px 3px rgb(236, 13, 13, 0.60);
 }

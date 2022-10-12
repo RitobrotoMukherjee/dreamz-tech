@@ -21,7 +21,7 @@ const TaxList = () => {
                 {loadingTax && (<Loading />)}
                 {(!loadingTax && errors) && (
                     <div className="HeadingHolder">
-                        <h3 className="MainHeading Error">{errors}</h3>
+                        <h3 className="Error">{errors}</h3>
                     </div>
                 )}
                 {!loadingTax && (

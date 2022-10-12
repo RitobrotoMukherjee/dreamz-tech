@@ -15,14 +15,15 @@ const getTaxList = async () => {
   return response.json();
 };
 
-const syncTaxList = async (taxes) => {
+const syncTaxList = async (taxesArray) => {
+    const postObject = { taxes: taxesArray}
     const response = await fetch(TAX_CREATE, {
         method: 'POST',
         mode: 'cors',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(taxes)
+        body: JSON.stringify(postObject)
     });
     return response.json();
 };

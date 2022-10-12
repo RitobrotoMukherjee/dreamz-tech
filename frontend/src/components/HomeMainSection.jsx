@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addAction } from '../redux/taxes/taxReducer';
+import { syncDataThunk } from '../redux/taxes/thunk';
 import Loading from "./Loading";
 import Button from "./inputs/Button";
 
@@ -64,17 +65,13 @@ const TaxForm = () => {
         }));
     }
 
-    const SyncWithDB = () => {
-        console.log('Sync');
-    }
-
     return (
         <>
             <section className="SectionHolder">
                 <div className="flex flex-col w-full">
                     <Button
                         type='button' className='ButtonRight'
-                        handleClick={SyncWithDB} label='Sync With DB'
+                        handleClick={() => dispatch(syncDataThunk())} label='Sync With DB'
                     />
                 </div>
                 <form className="flex flex-col w-full" onSubmit={handleSubmit}>
