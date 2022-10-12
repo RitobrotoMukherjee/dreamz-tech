@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Ritobroto-Mukherjee-blueviolet?labelColor=yellow)
 
-# Interview Take Home Project
+# DreamzTech Take Home Project
 
 > It's a **MERN** stack project for [DreamzTech Solutions](https://dreamztech.com) coding round. Followed GitHub flow.
 
