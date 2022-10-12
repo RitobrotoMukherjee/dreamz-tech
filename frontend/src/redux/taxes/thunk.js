@@ -7,15 +7,16 @@ export const syncDataThunk = () => async (dispatch, getState) => {
     const { newTaxData, taxData } = taxes;
 
     // For Loading show
-    dispatch(syncDataAction({ ...taxes, loadingTax: true }));
+    dispatch(syncDataAction({ loadingTax: true }));
     const response = await syncTaxList(newTaxData);
 
     // Success Response
     if (response.success) {
+        const { data } = response;
         dispatch(
             syncDataAction({
-                ...taxes, loadingTax: false,
-                taxData: [ ...newTaxData, ...taxData ], newTaxData: []
+                loadingTax: false, newTaxData: [],
+                taxData: [ ...data, ...taxData ], 
             })
         );
     }
@@ -23,7 +24,6 @@ export const syncDataThunk = () => async (dispatch, getState) => {
     // Error Response
     if (response.error) {
         dispatch(syncDataAction({
-            ...taxes,
             loadingTax: false, errors: response.msg
         }));
     }
